@@ -36,7 +36,12 @@ module.exports = {
         name: "zero",
         // Explicitly generate groth16
         protocol: "groth16",
-      },      
+      },
+      {
+        name: "num2bits",
+        protocol: "plonk",
+        //protocol: "groth16"        
+      }    
     ],
   },
 };
