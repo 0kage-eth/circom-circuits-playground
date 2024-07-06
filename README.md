@@ -1,17 +1,20 @@
-# circom-starter
+# circom-circuits playground
 
-A basic circom project using [Hardhat](https://github.com/nomiclabs/hardhat) and [hardhat-circom](https://github.com/projectsophon/hardhat-circom). This combines the multiple steps of the [Circom](https://github.com/iden3/circom) and [SnarkJS](https://github.com/iden3/snarkjs) workflow into your [Hardhat](https://hardhat.org) workflow.
+Project forked from @0xPARC repo for [circuit-starter](https://github.com/0xPARC/circom-starter). This project uses [hardhat-circom](https://github.com/projectsophon/hardhat-circom) to generate and verify proofs via Circom and SnarkJS.
 
-By providing configuration containing your Phase 1 Powers of Tau and circuits, this plugin will:
-
-1. Compile the circuits
-2. Apply the final beacon
-3. Output your `wasm` and `zkey` files
-4. Generate and output a `Verifier.sol`
+Project contains multiple circuits - each circuit can be compiled to output the `wasm` and `zkey` files. Project automatically generates verifier solidity file that can be used by a protocol to verify the key.
 
 ## Documentation
+Refer the notes section:
 
-See the source projects for full documentation and configuration
+| Topic | Summary |
+|-----|-----------|
+| [0xPARC notes](./notes/oxparc-notes.md)   | Notes from zk training         |   
+| [circom](./notes/circom.md)     | Circom docs and concepts         |
+| [groth16](./notes/groth16.md)   | All about groth16 prover         |
+| [r1c1](./notes/r1c1.md)         | All about r1c1 arithmetization         |
+| [halo](./notes/halo.md)         | Halo docs, concepts and notes         |
+
 
 ## Install
 

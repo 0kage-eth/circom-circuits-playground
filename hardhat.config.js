@@ -32,6 +32,11 @@ module.exports = {
         // Explicitly generate groth16
         protocol: "groth16",
       },
+      {
+        name: "zero",
+        // Explicitly generate groth16
+        protocol: "groth16",
+      },      
     ],
   },
 };
