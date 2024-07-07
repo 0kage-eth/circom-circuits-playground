@@ -1,5 +1,7 @@
-##0xPARC notes
+# 0xPARC notes
 
+## Pre-requisites
+Read [intro to zk](./intro2zk.md) for an intuitive understanding of ZK 
 
 ## Lesson 1 - Intro to ZK
  - ZK Proofs have 3 properties - soundness, completeness and zero knowledge
@@ -22,6 +24,7 @@
 
 A quick primer on zkSNARKs [here](./zkSNARKs.md). 
 
+---
 
 ## Lesson 2 - Circom Workshop
 - Example explaining what Circom tries to prove
@@ -65,4 +68,63 @@ A zkSNARK is basically a signature that proves that the prover has a tuple `(x1,
     ```
     - `===` represents a constraint and `<--` represents assigning a value to a signal. For more on this, refer the [circom notes](./circom.md)
 
-    - 
+    - On compiling, 3 files are generated for each circuit
+        - `*.r1cs` - witness generation program that is able to derive all four values just based on value of `x`
+        - `*.vkey.json` - verification key, usually very small. this will go into nodejs back end OR smart contract for verification of a proof
+        - `*.wasm`: .wasm` is a web assembly program that implements all the single arrow stuff (assigning signals)
+        - `*.zkey` - proving key - goes to client, ie. browser webapp -> this generates proof for specific case
+    - above files are in circuits folder - also present in artifacts folder
+
+    - On compiling, we also have this `*.sol` file in contracts folder that has the function `verifyProof` function that verifies a proof for a given set of public signals        
+
+    - this solidity contract basically converts verification key into solidity code
+
+    - If constraints are not properly setup, then the circuit could be buggy - this is one of the key risks when deploying circuits, ie. underconstrained systems. For eg. in the simple polynomical example, if we have the following
+
+    ```
+              x_squared <-- x * x;
+            x_cubed <-- x_squared * x;
+            out <-- x_cubed - x + 7;
+
+            x_squared === x * x;
+            // x_cubed === x_squared * x; // suppose this constraint is not defined
+            out === x_cubed - x + 7;
+    ```
+- In the above case, a prover can submit a random x_cubed value that satisfied the `out == x_cuber - x + 7` and get past the verification. The `completeness` of the zkSNARK is violated for this circuit. 
+
+- When possible, use double arrow -> recommendation of Circom
+
+- Discuss the [division.circom](../circuits/division.circom) example shows a case when the assignment differs from constraints. In assignment, we can use division but a constraint cannot have a division (only addition and multiplication are accepted at constraint level). This is why the constraint cleverly converts the division into multiplication
+
+- Discuss the [hash.circom](../circuits/hash.circom) example shows how to use a re-usable template (essentially, a module that can be included). This allows composability in circom. For template syntax, and constraints on how component templates can be instantiated, refer to my [circom notes](./circom.md)
+
+- Hardhat circom will generate a proof for a sample witness -> and then verify that proof against the verification key. When we check the logs of compiling circuit via hardhat, we can see that the proof is generated against a witness and also verified. The witness is in the `<circuit>.json` file. OK on hardhat circom shows that all files were generated and the proof for a witness is generated and verified successfully. 
+
+
+---
+
+## Lesson 3 - Snark dapps
+
+- SNARKs have a O(1) computation overload for verification. This means that any complex SNARK can be verified at moderate gas
+
+- Basic problem with blockchains
+    - smart contracts can't have private state
+    - smart contracts can't prove snarks - gas does not make it feasible. They need relayers, ie. offchain machines waiting for requests
+
+- SNARKs allow verifiable computation and private state
+
+- A zk rollup is nothing but an entire blockchain put on SNARKs
+    - Put verifier on a decentralized blockchain with a lot of decentralization
+    - Since the verification is O(1), we can achieve a cheap blockchain without compromising the security guarantess
+
+- Tornado cash uses Circom to generate circuit that does the mixing that de-links deposit with withdrawal. How does it work, intuitively?
+
+    - A depositor submits amount and `hash(note)` to escrow smart contract
+    - Escrow smart contract waits for `N` hashes and once it receives it, it closes all deposits and opens withdrawals
+    - Depositor has to prove that he has the pre-image of one of the hashes and also reveal `hash(hash(note))`
+    - Every withdrawal, contract stores `hash(hash(note))` so that same withdrawal cannot be replayed
+- Above is a simplification of TC, as in real world, TC allows depositors to deposit and withdraw at any time.
+
+
+
+

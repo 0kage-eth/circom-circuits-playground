@@ -41,7 +41,11 @@ module.exports = {
         name: "num2bits",
         protocol: "plonk",
         //protocol: "groth16"        
-      }    
+      },
+      {
+        name: "tornadocash3",
+        protocol: "groth16",
+      }  
     ],
   },
 };

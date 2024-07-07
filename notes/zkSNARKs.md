@@ -1,6 +1,11 @@
 # zkSNARKs
 
-Read couple of articles on zkSNARK. My understanding on some practical aspects
+## Pre-requisites
+Read [0xparc-notes](./oxparc-notes.md) before getting into this. This section is a big mathematical.
+
+---
+
+Some technical articles and my learning from the same:
 
 ## Christian Reitwiessner
 
@@ -18,8 +23,12 @@ Read couple of articles on zkSNARK. My understanding on some practical aspects
 
     - Zero knowledge proof - prover permutes values of `E(t(s)), E(h(s)), E(w(s)), E(v(s))` by multiplying with a number so that verifier can verify their structure without knowing actual encoded values
 
-    - 
+    
 
+---
+
+
+## Vitalik 3-part series on zkSNARKs
 
 
  [Vitalik](https://medium.com/@VitalikButerin/quadratic-arithmetic-programs-from-zero-to-hero-f6d558cea649)

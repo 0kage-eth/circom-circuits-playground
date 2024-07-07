@@ -93,4 +93,8 @@ Built following circuits in this repo
 
 2. [Stealth Air drop](https://github.com/stealthdrop/stealthdrop)
 
-3. [ZK Messaging]()
+3. [Tornado Cash](??)
+mathematically perfect money laundering machine
+
+4. [ZKML](??)
+Prove performance of a ML model without revealing it
