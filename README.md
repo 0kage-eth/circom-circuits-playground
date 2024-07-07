@@ -49,14 +49,21 @@ To build a single circuit during development, you can use the `--circuit` CLI pa
 
 ---
 
-## Resources
+## Resources & Tools
 
 - [zk REPL](https://zkrepl.dev/) - a remix like playground for building and checking circuits - found this super helpful to test circuits
 
 - [circomlib](https://github.com/iden3/circomlib/tree/master/circuits) - good list of tested circuits that are great to understand how circuits can be setup & modularized
 
-- [zk bugs](https://github.com/0xPARC/zk-bug-tracker?tab=readme-ov-file#dark-forest-1) - great resource for auditors to understand the nature of bugs & implementation issues related to zk circuits. 
+- [zk bug tracker](https://github.com/0xPARC/zk-bug-tracker?tab=readme-ov-file#dark-forest-1) - great resource for auditors to understand the nature of bugs & implementation issues related to zk circuits. 
 
+- [snarkJS](https://github.com/iden3/snarkjs) 
+
+- [hardhat circom](https://github.com/projectsophon/hardhat-circom)
+
+- [xkSNARK](https://github.com/akosba/xjsnark)
+
+- [Dark Forest Game](zkga.me)
 ---
 
 ## Circuits
@@ -67,3 +74,23 @@ Built following circuits in this repo
 |--------------|-------------|
 | [Zero](./circuits/zero.circom)     | Circuit to prove inverse of a number|
 | [Num2bits](./circuits/num2bits.circom)     | Circuit to prove conversion from number to bits|
+
+
+--- 
+
+## Articles
+
+1. [ZK Detailed Review - Christian Reitwiessner](https://blog.ethereum.org/2016/12/05/zksnarks-in-a-nutshell) 
+
+2. [Vitalik - 3 article series on zkSNARK](https://medium.com/@VitalikButerin/quadratic-arithmetic-programs-from-zero-to-hero-f6d558cea649)
+
+3. [Intro to zkSnarks - gubsheep](https://blog.zkga.me/intro-to-zksnarks)
+
+## Sample Projects
+
+1. [Dark Forest](https://zkga.me/)
+
+
+2. [Stealth Air drop](https://github.com/stealthdrop/stealthdrop)
+
+3. [ZK Messaging]()
