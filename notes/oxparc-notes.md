@@ -126,5 +126,50 @@ A zkSNARK is basically a signature that proves that the prover has a tuple `(x1,
 - Above is a simplification of TC, as in real world, TC allows depositors to deposit and withdraw at any time.
 
 
+- Dark forest example is also interesting:
+    - Challenge here is to prove that you are within a distance `X` from another coordinate whose exact location is also unknown
+    - So the proof should show that the distance between two points in space `S1`and `S2` (private inputs) is less than `D`. 
+    - Objective function in this case: `Dist(S1, S2) <= D`
+    - This is necessary to prove that your move is valid without revealing it
 
+- Zero Knowledge ML (zkML)
+    - _Problem to solve_: user wants to prove accuracy of his ML model without revealing what it is
+    - ML models lose all their edge if their secret sauce is revealed
+    - its a lose lose for a model developer if he has to reveal full model
+    - using ZK, a user can submit results of the model and accuracy without revealing    actual model
+    - This is how this works:
+        - Model developer commits to the hash of the model( say `H`) that was developed on test data
+        - Model dev hands over the model to the bounty announcer (data owner)
+        - Dev proves in a SNARK that model hits z% accuracy on the validation data 
+        - To claim reward, encrypt the model, and prove that the private key of the model developer can decrypt the model with hash `H`
+
+ - ZK Identity
+    - _Problem to solve_ - prove you are part of something without revealing full identity
+    - Ethereum has permissionless identity - private/public key
+    - but it is "all or nothing" privacy
+    - someone knowing address knows entire on-chain history
+    - there is no way to keep your individual identity private but be part of some group
+
+- ZK Group messaging
+    - _Problem to solve_: How can you message in a group without revealing your identity -> group just knows message came from one of their group members but don't know the identity
+    - This has multiple use-cases, for eg. employee feedback without the fear of being persecuted
+
+- Private airdrop
+    - _Problem to solve_: receive airdrop without revealing identity of recipient
+    - typical merkle root based airdrop creates a merkle rooty with leafs being user public address and amount
+    - to claim, a user gives a proof from a leaf with user address and amount
+    - contract marks user address as already claimed to prevent double pay
+    - to claim secretly, 
+        - smart contract stores merkle root with public keys instead of address
+        - use ECDSA circuit to prove I have signed a message with private key corresponding to public key
+        - use a nullifier with a hash of ECDSA r and s value to prevent double claims
+        - claim from another address
+
+    - Proof of membership is also a very similar problem to stealth airdrops. One example discussed is to join Discord channel without linking address & just by having token X -> a public address linking is like Doxxing oneself.
+
+---
+
+## Lesson 4 - Circom contd.
+- Implemented Num2FourBits -> I've generalized this to [Num2NBits](../circuits/num2bits.circom) using shift operators
+- 
 

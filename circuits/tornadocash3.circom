@@ -6,6 +6,15 @@ include "../node_modules/circomlib/circuits/mimcsponge.circom";
 //@note prove that you have a pre-image of one of the hashes in the tornado cash contract
 // this is needed at the time of withdrawal
 
+/**
+     - A depositor submits amount and `hash(note)` to escrow smart contract
+    - Escrow smart contract waits for `3` hashes and once it receives it, it closes all deposits and opens withdrawals
+    - Depositor has to prove that he has the pre-image of one of the hashes and also reveal `hash(hash(note))`
+    - Every withdrawal, contract stores `hash(hash(note))` so that same withdrawal cannot be replayed
+
+    To build this circuit, the constraint is that the hash should be one of the 3 depositor hashess
+*/
+
 template TornadoCash3() {
     signal input note; // pre-image by user
 

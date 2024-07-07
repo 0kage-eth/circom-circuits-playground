@@ -19,8 +19,10 @@ Refer the notes section:
 
 | Topic | Summary |
 |-----|-----------|
+| [Intro to ZK](./notes/intro2zk.md)   | ZK intro with practical use-cases         |   
 | [0xPARC notes](./notes/oxparc-notes.md)   | Notes from zk training         |   
 | [circom](./notes/circom.md)     | Circom docs and concepts         |
+| [zkSNARKS](./notes/zkSNARKs.md)     | ZK Snarks concepts         |
 | [groth16](./notes/groth16.md)   | All about groth16 prover         |
 | [r1c1](./notes/r1c1.md)         | All about r1c1 arithmetization         |
 | [halo](./notes/halo.md)         | Halo docs, concepts and notes         |
@@ -74,7 +76,7 @@ Built following circuits in this repo
 |--------------|-------------|
 | [Zero](./circuits/zero.circom)     | Circuit to prove inverse of a number|
 | [Num2bits](./circuits/num2bits.circom)     | Circuit to prove conversion from number to bits|
-
+| [Tornado](./circuits/tornadocash3.circom)     | Simplified tornado withdrawal prover with 3 depositors|
 
 --- 
 
@@ -86,10 +88,11 @@ Built following circuits in this repo
 
 3. [Intro to zkSnarks - gubsheep](https://blog.zkga.me/intro-to-zksnarks)
 
-## Sample Projects
+4. [Group Signatures using ZK Proofs](https://github.com/gubsheep/zk-group-sigs)
+
+## Real Life Projects / Use-cases
 
 1. [Dark Forest](https://zkga.me/)
-
 
 2. [Stealth Air drop](https://github.com/stealthdrop/stealthdrop)
 
@@ -98,3 +101,6 @@ mathematically perfect money laundering machine
 
 4. [ZKML](??)
 Prove performance of a ML model without revealing it
+
+5. [Cabal](cabal.xyz)
+Proof of membership
