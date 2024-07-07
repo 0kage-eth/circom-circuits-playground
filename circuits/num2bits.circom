@@ -1,5 +1,9 @@
 pragma circom 2.0.3;
 
+//@note this strangely does not complie when I run in groth16 prover sceheme using snarkjs
+//@note but it does compile under plonk scheme - is this because this cannot be arithmetized??
+//@follow-up ask someone why this is the case
+
 template Num2Bits(N) {
     signal input num;
     signal output out[N];
@@ -20,6 +24,3 @@ template Num2Bits(N) {
 }
 
 component main {public [num]} = Num2Bits(8);
-//@note this strangely does not complie when I run in groth16 prover sceheme using snarkjs
-//@note but it does compile under plonk scheme - is this because this cannot be arithmetized??
-//@follow-up ask someone why this is the case

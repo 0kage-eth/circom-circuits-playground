@@ -3,13 +3,16 @@
 ## why
 As a security auditor, I am learning about zkp's from ground zero. I find the existing material either too theoretical or research oriented.
 
-I am creating this repo to track my journey in the learning process that is practitioner friendly. I might keep changing the order of subjects & topics here as I gain more understanding - but the key intent is to make learning easy, intuitive and sticky & not get lost in math/formulas.
+I am creating this repo to track my journey in the learning process with a practitioner focus. I might keep changing the order of subjects & topics here as I gain more understanding - but the key intent is to make learning easy, intuitive and sticky.
 
+---
 
 ## intro
 Project forked from @0xPARC repo for [circuit-starter](https://github.com/0xPARC/circom-starter). This project uses [hardhat-circom](https://github.com/projectsophon/hardhat-circom) to generate and verify proofs via Circom and SnarkJS.
 
 Project contains multiple circuits - each circuit can be compiled to output the `wasm` and `zkey` files. Project automatically generates verifier solidity file that can be used by a protocol to verify the key.
+
+---
 
 ## Documentation
 Refer the notes section:
@@ -22,10 +25,13 @@ Refer the notes section:
 | [r1c1](./notes/r1c1.md)         | All about r1c1 arithmetization         |
 | [halo](./notes/halo.md)         | Halo docs, concepts and notes         |
 
+---
 
 ## Install
 
 `yarn` to install dependencies
+
+---
 
 ## Development builds
 
@@ -35,10 +41,13 @@ Further, for debugging purposes, you may wish to inspect the intermediate files.
 
 To build a single circuit during development, you can use the `--circuit` CLI parameter. For example, if you make a change to `hash.circom` and you want to _only_ rebuild that, you can run `yarn circom:dev --circuit hash`.
 
+---
+
 ## Production builds
 
 `yarn circom:prod` for production builds (using `Date.now()` as entropy)
 
+---
 
 ## Resources
 
@@ -47,3 +56,14 @@ To build a single circuit during development, you can use the `--circuit` CLI pa
 - [circomlib](https://github.com/iden3/circomlib/tree/master/circuits) - good list of tested circuits that are great to understand how circuits can be setup & modularized
 
 - [zk bugs](https://github.com/0xPARC/zk-bug-tracker?tab=readme-ov-file#dark-forest-1) - great resource for auditors to understand the nature of bugs & implementation issues related to zk circuits. 
+
+---
+
+## Circuits
+
+Built following circuits in this repo
+
+| Circuit Name | Explanation |
+|--------------|-------------|
+| [Zero](./circuits/zero.circom)     | Circuit to prove inverse of a number|
+| [Num2bits](./circuits/num2bits.circom)     | Circuit to prove conversion from number to bits|

@@ -16,6 +16,13 @@
 ---
 
 ## Constraints
+Some restrictions on constraints
+
+- only and quadratic (A*B + C) expressions are allowed
+- `===` operator used for constraints
+- `out <--- x*y` followed by `out === x*y` is same as `out <== x*y`
+- In some cases, constraints have to be cleverly designed. For eg `a <-- b/c` is OK, but the constraint wont accept the same equation. For constraint, `a*c === b` needs to be used in this case
+- Higher order expressions beyond quadratic need to be transformed into quadratic expressions if constraints need to be defined
 
 
 ---
@@ -85,4 +92,56 @@
 - boolean, arithmetic and bitwise operations are allowed
 - Field element is a value in the `Z/pZ` domain, where p is large prime number set by default
 - Field elements are operated in arithmetic modulo p
- 
+
+---
+
+## Conditionals
+
+- If / For and While introduce looping and conditionality - same as any other language
+- when constraints are generated inside if or loop statement, condition cannot be unknown (refer next section)
+
+
+
+## Unknowns
+- Unknowns - constants and template parameters are always considered known, while signals are always considered unknown. In below example `z` variable is considered unknown
+
+```
+template A(n1, n2){ // known
+   signal input in1; // unknown
+   signal input in2; // unknown
+   var x = 0; // known
+   var y = n1; // known
+   var z = in1; // unknown
+}
+
+component main = A(1, 2);
+```
+
+- Constraint with an array access must have a known array index. In below example, constraint is set to an index that is a signal (and hence unknown)
+
+```
+template A(n){
+   signal input in;
+   signal output out;
+   var array[n];
+
+   out <== array[in];
+   // Error: Non-quadratic constraint was detected statically, using unknown index will cause the constraint to be non-quadratic
+}
+```
+
+- If logic blocks (`if-else` or `for-while`) have unknown condition, then the block is considered unknown, and no constraints can be defined inside the block. See bwlom where the logic is dependent on input signal (and so whole `if` block is unknown). This is because constraint generation must be unique and not depend on unknown input signals
+
+```
+template A(){
+   signal input in;
+   signal output out;
+
+   if (in < 0){
+       // Error: There are constraints depending on the value of the condition and it can be unknown during the constraint generation phase
+       out <== 0;
+   }
+}
+
+component main = A();
+```
