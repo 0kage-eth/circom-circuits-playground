@@ -49,7 +49,11 @@ module.exports = {
       {
         name: "equal",
         protocol: "groth16",
-      }          
+      },          
+      {
+        name: "forceEqual",
+        protocol: "groth16",        
+      }                
     ],
   },
 };

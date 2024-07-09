@@ -1,6 +1,11 @@
 pragma circom 2.0.6;
 include "../node_modules/circomlib/circuits/comparators.circom";
 
+/**
+Circuit proves 2 numbers are equal without knowing actual numbers
+behavior of this circuit is if inputs are equal, out === 1 else out === 0
+uses the isZero component from circomlib
+*/
 template Are2NumbersEqual(){
 
     signal input a[2];
@@ -12,7 +17,7 @@ template Are2NumbersEqual(){
     zero.in <== diff;
 
     out <== zero.out;
-    // out === 1; //@note when input ===0, which it will be if equal, then output should be 1
+   
 }
 
 component main = Are2NumbersEqual();

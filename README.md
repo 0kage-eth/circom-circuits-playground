@@ -76,6 +76,8 @@ Built following circuits in this repo
 |--------------|-------------|
 | [Zero](./circuits/zero.circom)     | Circuit to prove inverse of a number|
 | [Num2bits](./circuits/num2bits.circom)     | Circuit to prove conversion from number to bits|
+| [Equal](./circuits/equal.circom)     | Circuit returns 1 if 2 numbers are equal, 0 otherwise|
+| [ForceEqual](./circuits/forceEqual.circom)     | Circuit asserts that 2 inputs are the same|
 | [Tornado](./circuits/tornadocash3.circom)     | Simplified tornado withdrawal prover with 3 depositors|
 
 --- 
