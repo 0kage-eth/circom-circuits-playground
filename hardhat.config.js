@@ -45,7 +45,11 @@ module.exports = {
       {
         name: "tornadocash3",
         protocol: "groth16",
-      }  
+      },
+      {
+        name: "equal",
+        protocol: "groth16",
+      }          
     ],
   },
 };
