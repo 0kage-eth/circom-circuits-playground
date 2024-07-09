@@ -171,5 +171,7 @@ A zkSNARK is basically a signature that proves that the prover has a tuple `(x1,
 
 ## Lesson 4 - Circom contd.
 - Implemented Num2FourBits -> I've generalized this to [Num2NBits](../circuits/num2bits.circom) using shift operators
-- 
+- Group signatures implementation - problem statement here is that, assuming I am part of a group of N people, can I send a message to the group where the group knows that it is sent by a member of the group but does not know who exactly sent it. 
+- We build a circom circuit that takes `N` user public keys, a secret key and a message. Circuit then verifies that the secret key generates a public key which is one of the `N` public keys -> the circuit also attests the public message with the secret key and returns the attested hash as an output.
 
+- I generalized the implementation for N members in a group [here](https://gist.github.com/0kage-eth/cb9521251e6963f96bcd660c0f6d3ebb)

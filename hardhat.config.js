@@ -53,7 +53,11 @@ module.exports = {
       {
         name: "forceEqual",
         protocol: "groth16",        
-      }                
+      },
+      {
+        name: "groupSignatures",
+        protocol: "groth16",        
+      }                      
     ],
   },
 };
