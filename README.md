@@ -80,7 +80,8 @@ Built following circuits in this repo
 | [ForceEqual](./circuits/forceEqual.circom)     | Circuit asserts that 2 inputs are the same|
 | [Tornado](./circuits/tornadocash3.circom)     | Simplified tornado withdrawal prover with 3 depositors|
 | [Group Messaging](./circuits/groupSignatures.circom)     | Generalized N player anonymous messaging|
-
+| [Reveal Signer](./circuits/revealSigner.circom)     | Reveals a user as a signer in anonymous group messaging|
+| [Deny Signer](./circuits/denySigner.circom)     | Denies that a user is a signer in anonymous group messaging|
 --- 
 
 ## Articles

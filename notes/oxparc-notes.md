@@ -175,3 +175,8 @@ A zkSNARK is basically a signature that proves that the prover has a tuple `(x1,
 - We build a circom circuit that takes `N` user public keys, a secret key and a message. Circuit then verifies that the secret key generates a public key which is one of the `N` public keys -> the circuit also attests the public message with the secret key and returns the attested hash as an output.
 
 - I generalized the implementation for N members in a group [here](https://gist.github.com/0kage-eth/cb9521251e6963f96bcd660c0f6d3ebb)
+
+- Added circuits for `revealSigner`, whose purpose is to verify that a specific user is indeed the signer of a message hash & `denySigner`, whose purpose is to verify that a user is NOT the signer of message. 
+
+
+

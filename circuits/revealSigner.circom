@@ -29,9 +29,8 @@ template RevealSigner() {
 component main{public[publicKey, msg, msgHash]} = RevealSigner();
 
 /* INPUT = {
-    "privateKey": "24",
-    "publicKey": "24",
-    "msg": "24",
-    "msgHash": ""
-
+    "privateKey": "42",
+    "publicKey": "10644022205700269842939357604110603061463166818082702766765548366499887869490",
+    "msg": "22244343",
+    "msgHash": "19833928673421348099551208308550845034353984796187223518782099197661428039949"
 } */
