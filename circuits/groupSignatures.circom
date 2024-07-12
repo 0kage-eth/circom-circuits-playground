@@ -1,6 +1,8 @@
 pragma circom 2.0.6;
 include "../node_modules/circomlib/circuits/MiMCSponge.circom";
 
+// run the circuit on zkrepl - gist: https://gist.github.com/0kage-eth/0cb636d66ae9970daf9b6aad4a5881ad
+
 /* @note a generic group signatures circuit that takes N public keys
 a private secret key, and a message. Circuit verifies that the sender is indeed
 one of the N public keys, and that the signature is valid.

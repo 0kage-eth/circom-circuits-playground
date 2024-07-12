@@ -57,7 +57,15 @@ module.exports = {
       {
         name: "groupSignatures",
         protocol: "groth16",        
-      }                      
+      },
+      {
+        name: "revealSigner",
+        protocol: "plonk",        
+      },
+      {
+        name: "denySigner",
+        protocol: "groth16",        
+      },                                
     ],
   },
 };
