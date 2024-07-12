@@ -108,3 +108,19 @@ Prove performance of a ML model without revealing it
 
 5. [Cabal](cabal.xyz)
 Proof of membership
+
+---
+## Puzzles
+
+Implementation of short puzzles, largely taken from [Rareskills repo](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main). Posting the file and corresponding zkREPL gist.
+
+
+| Puzzle | Explanation |
+|--------------|-------------|
+| [Add](./puzzles/Add.circom)     | Checks first element in array is sum of other 2 elements|
+| [AllBinary](./puzzles/AllBinary.circom)     | Checks every element is either 0 or 1|
+| [Equality](./puzzles/Equality.circom)     | Checks each element in an array is the same|
+| [FourBitBinary](./puzzles/FourBitBinary.circom)     | Checks if a number is binary representation of its 4 bit array|
+| [HasAtleastOne](./puzzles/HasAtleastOne.circom)     | Checks if atleast one element in array matches a specific value|
+| [IntDiv](./puzzles/IntDiv.circom)     | Checks integer division |
+

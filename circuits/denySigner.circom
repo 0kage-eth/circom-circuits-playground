@@ -2,6 +2,7 @@ pragma circom 2.0.6;
 include "../node_modules/circomlib/circuits/mimcsponge.circom";
 include "../node_modules/circomlib/circuits/comparators.circom";
 
+// gist: https://gist.github.com/0kage-eth/a157f92fc24860b88842d68c2a7de841
 //@note DenySigner circuit is used to verify that a private key has not signed a message hash
 
 template DenySigner() {
