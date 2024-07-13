@@ -123,4 +123,5 @@ Implementation of short puzzles, largely taken from [Rareskills repo](https://gi
 | [FourBitBinary](./puzzles/FourBitBinary.circom)     | Checks if a number is binary representation of its 4 bit array|
 | [HasAtleastOne](./puzzles/HasAtleastOne.circom)     | Checks if atleast one element in array matches a specific value|
 | [IntDiv](./puzzles/IntDiv.circom)     | Checks integer division |
-
+| [IntDivOut](./puzzles/IntDivOut.circom)     | Checks integer division and outputs quotient |
+| [IntSqrt](./puzzles/InSqrt.circom)     | Checks the integer square root of a number |

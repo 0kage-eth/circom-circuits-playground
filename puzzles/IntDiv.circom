@@ -1,6 +1,7 @@
 pragma circom 2.1.6;
 include "circomlib/comparators.circom";
 
+// Puzzle 6 - Integer Division: Circuit to verify that the given inputs are valid integer division
 // gist:  https://gist.github.com/0kage-eth/1d65ebbe23baa6f93fb6028362c30b22
 
 // Create a circuit that is satisfied if `numerator`,

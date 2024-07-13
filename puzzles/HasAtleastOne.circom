@@ -1,4 +1,5 @@
 pragma circom 2.1.6;
+// Puzzle 5: HasAtLeastOne - Circuit to check if a number is in the list
 // gist: https://gist.github.com/0kage-eth/9f0647e6f11aa4553674ab0dabcdbc6a
 // helper template to check if a signal is zero
 template IsZero() {
