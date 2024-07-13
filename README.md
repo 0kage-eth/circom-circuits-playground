@@ -115,13 +115,15 @@ Proof of membership
 Implementation of short puzzles, largely taken from [Rareskills repo](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main). Posting the file and corresponding zkREPL gist.
 
 
-| Puzzle | Explanation |
-|--------------|-------------|
-| [Add](./puzzles/Add.circom)     | Checks first element in array is sum of other 2 elements|
-| [AllBinary](./puzzles/AllBinary.circom)     | Checks every element is either 0 or 1|
-| [Equality](./puzzles/Equality.circom)     | Checks each element in an array is the same|
-| [FourBitBinary](./puzzles/FourBitBinary.circom)     | Checks if a number is binary representation of its 4 bit array|
-| [HasAtleastOne](./puzzles/HasAtleastOne.circom)     | Checks if atleast one element in array matches a specific value|
-| [IntDiv](./puzzles/IntDiv.circom)     | Checks integer division |
-| [IntDivOut](./puzzles/IntDivOut.circom)     | Checks integer division and outputs quotient |
-| [IntSqrt](./puzzles/InSqrt.circom)     | Checks the integer square root of a number |
+|#| Puzzle | Explanation |
+|--|--------------|-------------|
+|1| [Add](./puzzles/Add.circom)     | Checks first element in array is sum of other 2 elements|
+|2| [AllBinary](./puzzles/AllBinary.circom)     | Checks every element is either 0 or 1|
+|3| [Equality](./puzzles/Equality.circom)     | Checks each element in an array is the same|
+|4| [FourBitBinary](./puzzles/FourBitBinary.circom)     | Checks if a number is binary representation of its 4 bit array|
+|5| [HasAtleastOne](./puzzles/HasAtleastOne.circom)     | Checks if atleast one element in array matches a specific value|
+|6| [IntDiv](./puzzles/IntDiv.circom)     | Checks integer division |
+|7| [IntDivOut](./puzzles/IntDivOut.circom)     | Checks integer division and outputs quotient |
+|8| [IntSqrt](./puzzles/InSqrt.circom)     | Checks the integer square root of a number |
+|9| [IntSqrtOut](./puzzles/InSqrtOut.circom)     | Calculates the integer square root and checks constraints |
+|10| [IsSorted](./puzzles/InSqrt.circom)     | Checks all elements in array are sorted in ascending order|
