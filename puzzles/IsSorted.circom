@@ -3,6 +3,7 @@ include "circomlib/comparators.circom";
 
 // Puzzle 10: Verifies if the elements in input array are sorted in ascending order
 // gist: https://gist.github.com/0kage-eth/058ec7e9e5b18cfcb5627ca1f076751e
+//@note puzzle was for 4 elements, but I generalized for N elements
 
 // Write a circuit that constrains the N input signals to be
 // sorted. Sorted means the values are non decreasing starting

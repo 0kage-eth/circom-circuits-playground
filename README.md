@@ -127,3 +127,5 @@ Implementation of short puzzles, largely taken from [Rareskills repo](https://gi
 |8| [IntSqrt](./puzzles/InSqrt.circom)     | Checks the integer square root of a number |
 |9| [IntSqrtOut](./puzzles/InSqrtOut.circom)     | Calculates the integer square root and checks constraints |
 |10| [IsSorted](./puzzles/InSqrt.circom)     | Checks all elements in array are sorted in ascending order|
+|11| [MultiAND](./puzzles/MultiAND.circom)     | Checks all elements are binaries and output is 1 if all 1s, 0 otherwise|
+|12| [MultiOR](./puzzles/MultiOR.circom)     | Checks all elements are binaries and output is 1 if atleast one element is 1|
