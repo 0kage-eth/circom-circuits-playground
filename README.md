@@ -129,3 +129,6 @@ Implementation of short puzzles, largely taken from [Rareskills repo](https://gi
 |10| [IsSorted](./puzzles/InSqrt.circom)     | Checks all elements in array are sorted in ascending order|
 |11| [MultiAND](./puzzles/MultiAND.circom)     | Checks all elements are binaries and output is 1 if all 1s, 0 otherwise|
 |12| [MultiOR](./puzzles/MultiOR.circom)     | Checks all elements are binaries and output is 1 if atleast one element is 1|
+|13| [MultiplyNoOutput](./puzzles/MultiplyNoOutput.circom)     | Checks third element in array is multiplication of first 2|
+|14| [NotEqual](./puzzles/NotEqual.circom)     | Checks if any 2 elements in array are not equal|
+|15| [Poseidon](./puzzles/NotEqual.circom)     | Checks if any 2 elements in array are not equal
