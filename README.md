@@ -135,3 +135,5 @@ Implementation of short puzzles, largely taken from [Rareskills repo](https://gi
 |16| [Pow](./puzzles/Pow.circom)     | Checks power modulo|[gist]()|
 |17| [Quadratic](./puzzles/Quadratic.circom)     | Checks quadratic expression value|[gist](https://gist.github.com/0kage-eth/1fbc7513e906259b8921b425c9ea3514)|
 |18| [Range](./puzzles/Range.circom)     | Checks if value is in range|[gist](https://gist.github.com/0kage-eth/35dcb280efbd1c0797c9d2df82a42c1d)|
+|19| [Salt](./puzzles/Salt.circom)     | Generates a hash using a salt|[gist](https://gist.github.com/0kage-eth/55de11044c239f357719e5ffd05a240b)|
+|19| [Sudoku](./puzzles/Sudoku.circom)     | 4*4 Sudoku Solution Verifier|[gist](https://gist.github.com/0kage-eth/9aad3cd682874088824d7c11b53f6ff2)|
