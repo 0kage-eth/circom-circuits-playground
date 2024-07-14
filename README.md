@@ -116,7 +116,7 @@ Implementation of short puzzles, largely taken from [Rareskills repo](https://gi
 
 
 |#| Puzzle | Explanation | Gist |
-|--|--------------|-------------|
+|--|--------------|-------------|--|
 |1| [Add](./puzzles/Add.circom)     | Checks first element in array is sum of other 2 elements| [gist](https://gist.github.com/0kage-eth/ce965a67ca5508fe49c6fc03e6b8db45) |
 |2| [AllBinary](./puzzles/AllBinary.circom)     | Checks every element is either 0 or 1|[gist](https://gist.github.com/0kage-eth/34b84996d8bde561668a5b34c0ff769a)|
 |3| [Equality](./puzzles/Equality.circom)     | Checks each element in an array is the same|[gist](https://gist.github.com/0kage-eth/a4d0d850871e500263857b83a48b62b3)|
