@@ -5,6 +5,17 @@ pragma circom 2.1.6;
 
 // HINT: Non Quadratic constraints are not allowed. 
 
+
+template Multiply(){
+    signal input a;
+    signal input b;
+    signal output c;
+
+    c = a * b;
+
+
+
+}
 template Pow(m) { //@note I guess the modulo is missing -> I've assumed that it is a constant passed as param
    
    signal input a[2];
@@ -12,7 +23,8 @@ template Pow(m) { //@note I guess the modulo is missing -> I've assumed that it 
 
    // c = a[0] ^ a[1] % m
 
-    // TBD
+
+
 }
 
 component main = Pow(10);

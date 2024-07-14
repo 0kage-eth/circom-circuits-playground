@@ -115,20 +115,23 @@ Proof of membership
 Implementation of short puzzles, largely taken from [Rareskills repo](https://github.com/RareSkills/zero-knowledge-puzzles/tree/main). Posting the file and corresponding zkREPL gist.
 
 
-|#| Puzzle | Explanation |
+|#| Puzzle | Explanation | Gist |
 |--|--------------|-------------|
-|1| [Add](./puzzles/Add.circom)     | Checks first element in array is sum of other 2 elements|
-|2| [AllBinary](./puzzles/AllBinary.circom)     | Checks every element is either 0 or 1|
-|3| [Equality](./puzzles/Equality.circom)     | Checks each element in an array is the same|
-|4| [FourBitBinary](./puzzles/FourBitBinary.circom)     | Checks if a number is binary representation of its 4 bit array|
-|5| [HasAtleastOne](./puzzles/HasAtleastOne.circom)     | Checks if atleast one element in array matches a specific value|
-|6| [IntDiv](./puzzles/IntDiv.circom)     | Checks integer division |
-|7| [IntDivOut](./puzzles/IntDivOut.circom)     | Checks integer division and outputs quotient |
-|8| [IntSqrt](./puzzles/InSqrt.circom)     | Checks the integer square root of a number |
-|9| [IntSqrtOut](./puzzles/InSqrtOut.circom)     | Calculates the integer square root and checks constraints |
-|10| [IsSorted](./puzzles/InSqrt.circom)     | Checks all elements in array are sorted in ascending order|
-|11| [MultiAND](./puzzles/MultiAND.circom)     | Checks all elements are binaries and output is 1 if all 1s, 0 otherwise|
-|12| [MultiOR](./puzzles/MultiOR.circom)     | Checks all elements are binaries and output is 1 if atleast one element is 1|
-|13| [MultiplyNoOutput](./puzzles/MultiplyNoOutput.circom)     | Checks third element in array is multiplication of first 2|
-|14| [NotEqual](./puzzles/NotEqual.circom)     | Checks if any 2 elements in array are not equal|
-|15| [Poseidon](./puzzles/NotEqual.circom)     | Checks if any 2 elements in array are not equal
+|1| [Add](./puzzles/Add.circom)     | Checks first element in array is sum of other 2 elements| [gist](https://gist.github.com/0kage-eth/ce965a67ca5508fe49c6fc03e6b8db45) |
+|2| [AllBinary](./puzzles/AllBinary.circom)     | Checks every element is either 0 or 1|[gist](https://gist.github.com/0kage-eth/34b84996d8bde561668a5b34c0ff769a)|
+|3| [Equality](./puzzles/Equality.circom)     | Checks each element in an array is the same|[gist](https://gist.github.com/0kage-eth/a4d0d850871e500263857b83a48b62b3)|
+|4| [FourBitBinary](./puzzles/FourBitBinary.circom)     | Checks if a number is binary representation of its 4 bit array|[gist](https://gist.github.com/0kage-eth/51ad0e2995e2fd127505902092e82b92)|
+|5| [HasAtleastOne](./puzzles/HasAtleastOne.circom)     | Checks if atleast one element in array matches a specific value|[gist](https://gist.github.com/0kage-eth/9f0647e6f11aa4553674ab0dabcdbc6a)|
+|6| [IntDiv](./puzzles/IntDiv.circom)     | Checks integer division |[gist](https://gist.github.com/0kage-eth/1d65ebbe23baa6f93fb6028362c30b22)|
+|7| [IntDivOut](./puzzles/IntDivOut.circom)     | Checks integer division and outputs quotient |[gist](https://gist.github.com/0kage-eth/46fc069f709d049451c6e52d42ec3223)|
+|8| [IntSqrt](./puzzles/InSqrt.circom)     | Checks the integer square root of a number |[gist](https://gist.github.com/0kage-eth/630bffc994291ecfad7d45997d4fc52f)|
+|9| [IntSqrtOut](./puzzles/InSqrtOut.circom)     | Calculates the integer square root and checks constraints |[gist](https://gist.github.com/0kage-eth/b9b3fba5f78505335e421ece033223e6)|
+|10| [IsSorted](./puzzles/IsSorted.circom)     | Checks all elements in array are sorted in ascending order|[gist](https://gist.github.com/0kage-eth/058ec7e9e5b18cfcb5627ca1f076751e)|
+|11| [MultiAND](./puzzles/MultiAND.circom)     | Checks all elements are binaries and output is 1 if all 1s, 0 otherwise|[gist](https://gist.github.com/0kage-eth/2a0958b1a5c5f5b051263d774a96bd29)|
+|12| [MultiOR](./puzzles/MultiOR.circom)     | Checks all elements are binaries and output is 1 if atleast one element is 1|[gist](https://gist.github.com/0kage-eth/5c307ab8ea93e77ab4feecd5ce826ac8)|
+|13| [MultiplyNoOutput](./puzzles/MultiplyNoOutput.circom)     | Checks third element in array is multiplication of first 2|[gist](https://gist.github.com/0kage-eth/b0aae9af4dc157871669b0edb3575fa0)|
+|14| [NotEqual](./puzzles/NotEqual.circom)     | Checks if any 2 elements in array are not equal|[gist](https://gist.github.com/0kage-eth/9e7848068f51d821447e88360f12e8b6)|
+|15| [Poseidon](./puzzles/Poseidon.circom)     | Checks Poseidon hash of 4 elements|[gist](https://gist.github.com/0kage-eth/cc35387d7aaa3e5234db27fb2fedb1c5)|
+|16| [Pow](./puzzles/Pow.circom)     | Checks power modulo|[gist]()|
+|17| [Quadratic](./puzzles/Quadratic.circom)     | Checks quadratic expression value|[gist](https://gist.github.com/0kage-eth/1fbc7513e906259b8921b425c9ea3514)|
+|18| [Range](./puzzles/Range.circom)     | Checks if value is in range|[gist](https://gist.github.com/0kage-eth/35dcb280efbd1c0797c9d2df82a42c1d)|

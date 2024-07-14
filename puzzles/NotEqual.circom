@@ -2,6 +2,7 @@ pragma circom 2.1.6;
 include "circomlib/comparators.circom";
 
 //Puzzle 14: Checks if any 2 elements in array are not equal
+// https://gist.github.com/0kage-eth/9e7848068f51d821447e88360f12e8b6
 // Input : a , length of N .
 // Output : c .
 // In this exercise , you have to check that a[i] is NOT equal to a[i+1] for all i: [0,N-1], if not equal, output 1, else output 0.
