@@ -178,5 +178,45 @@ A zkSNARK is basically a signature that proves that the prover has a tuple `(x1,
 
 - Added circuits for `revealSigner`, whose purpose is to verify that a specific user is indeed the signer of a message hash & `denySigner`, whose purpose is to verify that a user is NOT the signer of message. 
 
+---
 
+## Lesson 5 - Tornado Cash explainer
 
+- way it works
+    - generate a secret password on my local machine
+    - hash it and send 1 ETH with the hash
+    - 1 ETH joins a pool
+    - the hash gets appended to a table
+    - At a later date, from a different address, I will prove that I know the secret password for a hash appended to TC table
+    - TC will verify this proof & send the 1 ETH to a different addy
+    - Nobody can establish a link between the earlier & the later account - thus anonymyzing/mixing fund flows   
+
+- to prevent double spend or replay, we use the nullifier concept
+- nullifier basically takes a second hash -> that is also derived from secret password -> and once used, same hash cannot be reused as this second hash is stored in the contract -> in the example I created, second hash was created as a hash of the first hash
+- TC contract stores the user hashes and the ETH against those hashes in the form of a Merkle Tree. So when no deposits are made, leafs are all 0.
+
+![Merkle Tree](./imgs/TCMerkleTree0.png)
+
+- Advantage of a merkle tree is that entire state can be verified by a single root -> small storage footprint
+
+- So a zero knowledge proof would be as follows:
+**I know a secret password, so that the hash of that password exists as a leaf in the merkle tree** -> a circuit that can verify this can basically allow deposits/withdrawals by preserving their anonymity.
+
+- In the figure below, the contract only sees info inside the red box. Contract does not have access to the secret pwrds. Contract has the notes, which are the hashes of the secret pwrds, contract has nullifiers, which are hashes of secret pwrd (but with a diff hash function) -> nullifiers,as mentioned, prevent replay withdrawals.
+
+![NewDeposit](./imgs/TCNewDeposit.png)
+
+- Now a new depositor, first generates a deposit note dn4 (hash) from his secret password and deposits into the TC contract. This updates the root, as all the relevant branch nodes in the binary tree get updated
+
+- hash function used in merkle tree -> needs to be efficient for zk verification
+
+-  So a user coming for a withdrawal has to do two tasks
+    - prove the hash of secret pwrd is in the merkle root
+    - another hash of secret pwrd from a different hasher, creating the nullifier, is unique and has not been used before
+
+- So the contract state with nullifiers looks like below
+![Nullifiers](./imgs/TCNullifiers.png)
+
+- So the contract does NOT know which secret password has been withdrawn. But the contract does know that a secret password corresponding to nullifier 1 and nullifier 2 are withdrawn.
+
+- 
