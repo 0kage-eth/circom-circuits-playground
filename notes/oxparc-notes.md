@@ -1,4 +1,4 @@
-# 0xPARC notes
+# 0xPARC notes - Circom
 
 ## Pre-requisites
 Read [intro to zk](./intro2zk.md) for an intuitive understanding of ZK 
@@ -217,6 +217,37 @@ A zkSNARK is basically a signature that proves that the prover has a tuple `(x1,
 - So the contract state with nullifiers looks like below
 ![Nullifiers](./imgs/TCNullifiers.png)
 
-- So the contract does NOT know which secret password has been withdrawn. But the contract does know that a secret password corresponding to nullifier 1 and nullifier 2 are withdrawn.
+- So the contract does NOT know which secret password has been withdrawn. But the contract does know that a secret password corresponding to nullifier 1 and nullifier 2 are withdrawn > and contract knows that these nullifiers were not used before
 
-- 
+
+---
+
+## Lesson 6 - Creating a zkSNARK app
+
+- Objective is to create an end-to-end app that contains
+    - a circuit to prove that only a user with a secret can mint a NFT
+    - a smart contract that verifies the proof and mints a NFT if proof is verified
+    - a front-end app that allows users to mint a NFT
+
+- Circuit contains a prover that checks the hash of pre-image is equal to the note stored in smart contract &  a nullifier -> if a user has used a secret once to mint a NFT, they should not be able to reuse it again
+
+- Start with a circuit. Wrote a NFT mint circuit that can be found [here](../circuits/nftMint.circom)
+
+- A verification solidity contract can be found here. I tweaked a Nft contract of OpenZeppelin to mint a NFT subject to proof verification
+
+- Once both are in place, a browser application can be built in react/node js that takes user inputs to generate a proof and use ethers.js to submit the proof to smart contract -> this will be a end to end zkSNARK app.
+
+- In general, my learning here is that real world apps have 3 components
+    client -> smart contract -> circom 
+
+- `client` => user interactions and proof generation
+- `smart contract` => NFT minting subject to verification
+- `circom` => actual verification
+
+
+
+---
+
+## Lesson 7 - Trusted Setup
+
+TBD
